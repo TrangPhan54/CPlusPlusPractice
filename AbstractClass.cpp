@@ -2,7 +2,9 @@
 using namespace std;
 class Instrument {
     public:
-    virtual void MakeSound() = 0;
+    virtual void MakeSound() {
+        cout << "you r not alone" << endl;
+    }
 };
 class Guitar : public Instrument {
     public:
