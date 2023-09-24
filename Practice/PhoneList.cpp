@@ -6,8 +6,18 @@ class PhoneList {
     vector<SmartPhone> smartPhoneList;
     public:
     PhoneList(){}
+    bool checkIfExisted(string id){
+        if(smartPhoneList.size() > 0)
+        for(int i = 0; i < smartPhoneList.size(); i++){
+            if(smartPhoneList[i].getId() == id){
+                cout << "The phone is existed" << endl;
+                return true;
+            } 
+        }
+        return false;
+    }
     
-    bool addPhone(){
+    void addPhone(){
         string id = "";
         string manufacturer = "";
         double price = 0;
@@ -17,6 +27,9 @@ class PhoneList {
         bool existed = false;
         cout << "Please enter the id of the phone " << endl;
         cin >> id;
+        if(checkIfExisted(id)){
+            return;
+        };
         cout << "Please enter the manufacturer of the phone " << endl;
         cin >> manufacturer;
         cout << "Please enter the price of the phone " << endl;
@@ -26,23 +39,10 @@ class PhoneList {
         cout << "Please enter the description of the phone " << endl;
         cin >> description;
         SmartPhone smartPhone(id,manufacturer,price,createdDate,description);
-        if(smartPhoneList.size() == 0){
-            existed = false;
-        }
-        else {
-            for(int i = 0; i < smartPhoneList.size();i++){
-                if(smartPhoneList[i].getId() == id){
-                    existed = true;
-                    cout << "This phone is existed" << endl;
-                }
-            }
-        }
-        if(existed == false){
+        if(!checkIfExisted(id)){
             smartPhoneList.push_back(smartPhone);
-            cout << "add succesfully" << endl;
-            isAdded = true;
+            cout << "add successfully" << endl;
         }
-        return isAdded;
     }
     void deletePhone(){
         string id = "";
@@ -145,7 +145,7 @@ class PhoneList {
             cout << "The price: " << smartPhoneList[i].getPrice() << endl;
 
         }
-        }
+    }
         else {
             cout << "List is empty" << endl;
         }
