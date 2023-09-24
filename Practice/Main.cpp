@@ -2,11 +2,11 @@
 
 int main(){
     PhoneList phone;
+    int input = 0;
    
-    while(true){
+    while(input != 8){
         cout << "Menu:\n1: add smart phone\n2: delete smart phone\n3: View the list of all smart phones:\n4: Sort the list of smart phones by price:\n5: Search smart phone by ID:\n6: Search smart phone by min price and max price:\n7: List of smart phones by manufacturer:\n8:exit" << endl;
         cout << "please enter a value:" << endl;
-        int input = 0;
         cin >> input;
         switch (input){
         case 1:
@@ -32,6 +32,9 @@ int main(){
         break;
         case 8:
         cout << "exit" << endl;
+        break;
+        default:
+        cout << "Please enter another number" << endl;
         break;
         }
 

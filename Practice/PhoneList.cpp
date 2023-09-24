@@ -62,7 +62,6 @@ class PhoneList {
                 }
             }
         }
-
     }
     void viewListOfSmartPhone(){
         if(smartPhoneList.size() == 0){
