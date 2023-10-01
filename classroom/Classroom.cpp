@@ -9,6 +9,7 @@ class Classroom {
     double area;
     int numOfBubs;
     public:
+    Classroom(){}
     Classroom(string _id,string _areaName,double _area,int _numOfBubs) : id(_id),areaName(_areaName),area(_area),numOfBubs(_numOfBubs){}
     string getId(){
         return this -> id;
