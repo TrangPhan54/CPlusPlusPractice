@@ -166,6 +166,7 @@ class Management {
         }
         return NULL;
     }
+    }
     vector<ITRoom*> listOfRoomHas60Computers(){
 
     }    
